@@ -47,7 +47,7 @@ house_diffusion
 |   |   └── 0.json
 |   |   └── 1.json
 |   |   └── ...
-|   |       └── list.txt
+|   |   └── list.txt
 |   └── ...
 |
 └── scripts
