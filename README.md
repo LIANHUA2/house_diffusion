@@ -62,9 +62,15 @@ house_diffusion
 │             └──  model250000.pt
 └── ......
 ```
-In short, you need to ensure that "house_diffusion", "image_train.py" and "image_sample.py" are in the same directory.You also need to add two folders "outputs" and "processed_rplan", otherwise you may report an error.You also need to add a "list.txt" file to the "rplan" file.
+In short, you need to ensure that "house_diffusion", "image_train.py" and "image_sample.py" are in the same directory.You also need to add two folders "outputs" and "processed_rplan", otherwise you may report an error.You also need to add a "list.txt" file to the "rplan" folder.
 
 ## Running the code
+
+Firstly, make sure your current directory is the scripts folder.
+```
+pwd
+cd scripts
+```
 
 **1. Training**
 
@@ -74,6 +80,16 @@ You can run a single experiment using the following command:
 ```
 python image_train.py --dataset rplan --batch_size 32 --set_name train --target_set 8
 ```
+
+If you want to train from a saved checkpoint (such as model250000.pt), you can use the following code:
+```
+python image_train.py --dataset rplan --batch_size 32 --set_name train --target_set 8 --resume_checkpoint "/root/house_diffusion/scripts/ckpts/exp/model250000.pt"
+```
+Please correct the path of `-resume_checkpoint` .
+
+
+
+
 **2. Sampling**
 To sample floorplans, you can run the following command from inside of the `scripts` directory. To provide different visualizations, please see the `save_samples` function from `scripts/image_sample.py`
 
