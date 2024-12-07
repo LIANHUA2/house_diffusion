@@ -12,7 +12,7 @@ cd house_diffusion
 pip install -r requirements.txt
 pip install -e .
 ```
-I basically reproduced the original paper on December 5, 2024. There are many details in the original code that are not clear, and there are many python libraries that cannot be used today.
+I basically reproduced the results of the original paper and the original code on December 5, 2024. I use Linux system (no GUI) and GTX3090 GPU. There are many details in the original code that are not clear, and there are many python libraries that cannot be used today.
 
 You need to modify the "requirements.txt file", and change "torch==2.0.0.dev20221212" to "torch==2.0.0." Because the original version is no longer valid.You also need to delete "mpi4py==3.1.4", and this library cannot be installed directly through "pip" now. You can install "Conda Install-C Conda-Forge mpi4py" at the terminal.
 ```
@@ -48,7 +48,7 @@ house_diffusion
 |   |   └── 1.json
 |   |   └── ...
 |   └── ...
-└
+|
 └── scripts
 │   ├── guided_diffusion
 │   ├── house_diffusion   
@@ -66,6 +66,8 @@ In short, you need to ensure that "house_diffusion", "image_train.py" and "image
 ## Running the code
 
 **1. Training**
+
+Note that it may take 20 hours to train from 0 step to 1000000 step. Please make sure you have enough time. I use the GPU of GTX3090.
 
 You can run a single experiment using the following command:
 ```
