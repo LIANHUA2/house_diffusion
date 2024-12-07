@@ -14,7 +14,7 @@ pip install -e .
 ```
 I basically reproduced the results of the original paper and the original code on December 5, 2024. I use Linux system (no GUI) and GTX3090 GPU. There are many details in the original code that are not clear, and there are many python libraries that cannot be used today.
 
-You need to modify the "requirements.txt file", and change "torch==2.0.0.dev20221212" to "torch==2.0.0." Because the original version is no longer valid.You also need to delete "mpi4py==3.1.4", and this library cannot be installed directly through "pip" now. You can install "Conda Install-C Conda-Forge mpi4py" at the terminal.
+You need to modify the "requirements.txt file", and change `torch==2.0.0.dev20221212` to `torch==2.0.0`. Because the original version is no longer valid.You also need to delete `mpi4py==3.1.4`, and this library cannot be installed directly through "pip" now. You can install `Conda install-c conda-forge mpi4py` at the terminal.
 ```
 conda install -c conda-forge mpi4py
 ```
@@ -98,6 +98,7 @@ python image_sample.py --dataset rplan --batch_size 32 --set_name eval --target_
 ```
 You can also run the corresponding code from `scripts/script.sh`. 
 
+- If you have never trained a model and do not have .npz files corresponding to your target_set value in `scripts/process_rplan`, simply running the above sampling script will result in an error. Run the training script until the training starts. Ignore the error message. You can then exit and re-run the sampling script. The results will be shown in `scripts/outputs`.
 
 ## Citation
 
