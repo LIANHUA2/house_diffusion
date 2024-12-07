@@ -47,6 +47,7 @@ house_diffusion
 |   |   └── 0.json
 |   |   └── 1.json
 |   |   └── ...
+|   |       └── list.txt
 |   └── ...
 |
 └── scripts
@@ -61,7 +62,7 @@ house_diffusion
 │             └──  model250000.pt
 └── ......
 ```
-In short, you need to ensure that "house_diffusion", "image_train.py" and "image_sample.py" are in the same directory.You also need to add two folders "outputs" and "processed_rplan", otherwise you may report an error.
+In short, you need to ensure that "house_diffusion", "image_train.py" and "image_sample.py" are in the same directory.You also need to add two folders "outputs" and "processed_rplan", otherwise you may report an error.You also need to add a "list.txt" file to the "rplan" file.
 
 ## Running the code
 
