@@ -99,6 +99,18 @@ python image_sample.py --dataset rplan --batch_size 32 --set_name eval --target_
 You can also run the corresponding code from `scripts/script.sh`. 
 
 - If you have never trained a model and do not have .npz files corresponding to your target_set value in `scripts/process_rplan`, simply running the above sampling script will result in an error. Run the training script until the training starts. Ignore the error message. You can then exit and re-run the sampling script. The results will be shown in `scripts/outputs`.
+- Sometimes you will be prompted that `pygraphviz` is missing. You can install it with the following command:
+```
+sudo apt update
+sudo apt install graphviz graphviz-dev
+```
+```
+pip install pygraphviz
+```
+
+**3. Reproduction results**
+
+I can't calculate the FID value because of an unknown error. In fact, the generated floor plan has many gaps between rooms.
 
 ## Citation
 
