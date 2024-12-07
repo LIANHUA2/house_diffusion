@@ -12,6 +12,13 @@ cd house_diffusion
 pip install -r requirements.txt
 pip install -e .
 ```
+I basically reproduced the original paper on December 5, 2024. There are many details in the original code that are not clear, and there are many python libraries that cannot be used today.
+
+You need to modify the "requirements.txt file", and change "torch==2.0.0.dev20221212" to "torch==2.0.0." Because the original version is no longer valid.You also need to delete "mpi4py==3.1.4", and this library cannot be installed directly through "pip" now. You can install "Conda Install-C Conda-Forge mpi4py" at the terminal.
+```
+conda install -c conda-forge mpi4py
+```
+
 **2. Download the dataset and create the datasets directory**
 
 - You can download the datasets from [RPLAN's website](http://staff.ustc.edu.cn/~fuxm/projects/DeepLayout/index.html) or by filling [this](https://docs.google.com/forms/d/e/1FAIpQLSfwteilXzURRKDI5QopWCyOGkeb_CFFbRwtQ0SOPhEg0KGSfw/viewform) form.
@@ -30,7 +37,31 @@ house_diffusion
 └── scripts
 └── ...
 ```
-- We have provided a temporary model that you can download from [Google Drive](https://drive.google.com/file/d/16zKmtxwY5lF6JE-CJGkRf3-OFoD1TrdR/view?usp=share_link). 
+- We have provided a temporary model that you can download from [Google Drive](https://drive.google.com/file/d/16zKmtxwY5lF6JE-CJGkRf3-OFoD1TrdR/view?usp=share_link).
+  
+In fact, this file path is wrong, but I don't know why no one mentioned it. I think the correct thing should be this:
+```
+house_diffusion
+├── datasets
+│   ├── rplan
+|   |   └── 0.json
+|   |   └── 1.json
+|   |   └── ...
+|   └── ...
+└
+└── scripts
+│   ├── guided_diffusion
+│   ├── house_diffusion   
+│   ├── image_sample.py   
+│   ├── image_train.py
+│   ├── outputs
+│   ├── processed_rplan   
+│   └──  ckpts
+│        └── exp
+│             └──  model250000.pt
+└── ......
+```
+In short, you need to ensure that "house_diffusion", "image_train.py" and "image_sample.py" are in the same directory.
 
 ## Running the code
 
