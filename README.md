@@ -74,7 +74,7 @@ cd scripts
 
 **1. Training**
 
-Note that it may take 20 hours to train from 0 step to 1000000 step. Please make sure you have enough time. I use the GPU of GTX3090.
+Note that it may take 20 hours to train from 0 step to 1000000 step. Please make sure you have enough time. I use the GPU of RTX3090.
 
 You can run a single experiment using the following command:
 ```
